@@ -1,0 +1,63 @@
+{% extends 'admin/admin_home.html' %}
+{% load static %} 
+{% block content %}
+{% if msg %}
+<script>
+    alert("{{msg}}")
+</script>
+{% endif %}
+<br>
+<br>
+<br>
+<br>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+<div class="row">
+<!-- ------------------------------------------------- -->
+<div class="col-4"style="color:#6f42c1;">
+    <a href="/admin_add_seed" class="">
+
+    <div class="card" style="width: 18rem;">
+        <img src="/static/assets/img/sowing-seeds.gif" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Add Seed</h5>
+          <p class="card-text"></p>
+       </a>
+        </div>
+      </div>
+</div>
+<!-- ---------------------------------------------- -->
+<div class="col-4"style="color:#6f42c1;">
+    <a href="/admin_add_fert" class="">
+    <div class="card" style="width: 18rem;">
+        <img src="/static/assets/img/growth.gif" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Add Fertilizers</h5>
+          <p class="card-text"></p>
+          </a>
+        </div>
+      </div>
+</div>
+<!-- ---------------------------------------------- -->
+<div class="col-4"style="color:#6f42c1;">
+    <a href="/admin_add_tools" class="">
+
+    <div class="card" style="width: 18rem;">
+        <img src="/static/assets/img/shovel.gif" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Add Equipments</h5>
+          <p class="card-text"></p>
+    </a>
+        </div>
+      </div>
+</div>
+<!-- ---------------------------------------------- -->
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}

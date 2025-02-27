@@ -1,0 +1,38 @@
+
+{% extends 'admin/admin_home.html' %}
+{% load static %} 
+{% block content %}
+{% if msg %}
+<script>
+	alert("{{msg}}")
+</script>
+{% endif %}
+
+ 
+            <br><br><br><br><br><br>
+            <div class="row">
+                {% for i in abc%}
+                <div class="col-3">
+
+                            {% comment %} ============================ {% endcomment %}
+
+                            <div class="card" style="width: 18rem;height:25rem;">
+                                <img src="/static/assets/image/{{i.s_img}}" class="card-img-top" style="height: 200px;" alt="...">
+                                <div class="card-body">
+                                  <h5 class="card-title">{{i.s_name}}</h5>
+                                  <p class="card-text">Stock &nbsp : &nbsp{{i.s_stock}}</p>
+                                  <p class="card-text">Rate &nbsp &nbsp  : &nbsp{{i.s_rate}}</p>
+                                  {% comment %} <a href="#" class="btn btn-primary">Go somewhere</a> {% endcomment %}
+                                  <p><a class="btn btn-success" href="/admin_update_product?id={{i.sid}}" style="margin-left:10%;">Update</a> 
+                                    <a class="btn btn-danger" href="/admin_delete_product?id={{i.sid}}">Delete</a>
+                                </div>
+                              </div>
+                            {% comment %} ============================ {% endcomment %}
+                        </div>
+                    
+                {% endfor %}
+            </div>
+      
+    <!-- //collections -->
+
+	{% endblock %}

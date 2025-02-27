@@ -1,0 +1,59 @@
+{% extends 'user/user_home.html' %}
+	{% load static %} 
+	{% block content %}
+	{% if msg %}
+ 
+	<script>
+		alert("{{msg}}")
+	</script>
+	{% endif %}
+    <style>
+        .one{
+            width: 50%;
+            background-color: blue;
+            color:whitesmoke;
+            border: none;
+            border-radius: 10px;
+            padding: 20px;
+           
+
+        }
+    </style>
+    <!-- collections -->
+    <div class="mt-5">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="mt-5">
+           
+
+                        <div class="row">
+                            <form action="" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <table>
+                                    <tr>
+                                        <td>File Name</td>
+                                        <td><input type="file" name="fname" id=""></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td><td><input type="submit" value="Submit"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">{{prediction}}</td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                    
+                        
+          
+    {% comment %} {% if abc %}
+    <center>
+    <button class="one mt-5"><a href="/payment">Pay Now</a></button>
+</center>
+    {% endif %} {% endcomment %}
+    <br><br><br><br><br>
+    <!-- //collections -->
+	{% endblock %}

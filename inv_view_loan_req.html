@@ -1,0 +1,23 @@
+{% extends 'investor/inv_home.html' %}
+{% load static %} 
+{% block content %}
+{% if msg %}
+<script>
+    alert("{{msg}}")
+</script>
+{% endif %}
+
+
+<br><br><br><br>
+{% for i in abc %}
+<div class="alert alert-primary" role="alert">
+     <a href="/doc?id={{i.appid}}" class="alert-link">
+        <h3>{{i.fid.f_name}}</h3>
+        <h3>{{i.app_amount}}</h3>
+     </a>
+  </div>
+{% endfor %}
+
+
+
+{% endblock %}

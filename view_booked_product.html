@@ -1,0 +1,60 @@
+{% extends 'user/user_home.html' %}
+	{% load static %} 
+	{% block content %}
+	{% if msg %}
+ 
+	<script>
+		alert("{{msg}}")
+	</script>
+	{% endif %}
+    <style>
+        .one{
+            width: 50%;
+            background-color: blue;
+            color:whitesmoke;
+            border: none;
+            border-radius: 10px;
+            padding: 20px;
+           
+
+        }
+    </style>
+    <!-- collections -->
+    <div class="mt-5">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="mt-5">
+           
+
+                        <div class="row">
+                            {% for i in abc%}
+                            <div class="col-3">
+                    
+                                        {% comment %} ============================ {% endcomment %}
+                    
+                                        <div class="card" style="width: 18rem;height:25rem;">
+                                            <img src="/static/assets/image/{{i.pid.p_img}}" class="card-img-top" style="height: 200px;" alt="...">
+                                            <div class="card-body">
+                                              <h5 class="card-title">{{i.pid.p_name}}</h5>
+                                              <p class="card-text">Stock &nbsp : &nbsp{{i.cart_stock}}</p>
+                                              <p class="card-text">Rate &nbsp &nbsp  : &nbsp{{i.pid.p_rate}}</p>
+                                            </div>
+                                            </div>
+                                    </div>
+                                
+                            {% endfor %}
+                        </div>
+                    
+                        
+          
+    {% if abc %}
+    <center>
+    <button class="one mt-5"><a href="/payment">Pay Now</a></button>
+</center>
+    {% endif %}
+    <br><br><br><br><br>
+    <!-- //collections -->
+	{% endblock %}

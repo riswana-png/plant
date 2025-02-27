@@ -1,0 +1,78 @@
+{% extends 'investor/inv_home.html' %}
+{% load static %} 
+{% block content %}
+{% if msg %}
+<script>
+    alert("{{msg}}")
+</script>
+{% endif %}
+
+
+<br><br><br><br>
+{% for i in abc %}
+<div class="row">
+    <div class="col-3">
+        &nbsp
+        <p>Name&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:&nbsp{{i.fid.f_name}}</p>
+        <p>Phone&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:&nbsp{{i.fid.f_phone}}</p>
+        <p>Address&nbsp&nbsp&nbsp:&nbsp{{i.fid.f_address}}</p>
+        <p>Email&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:&nbsp{{i.fid.f_email}}</p>
+        <p>Location&nbsp&nbsp:&nbsp{{i.fid.f_loca}}</p>
+        <p>Amoun&nbsp&nbsp&nbsp&nbsp:&nbsp{{i.app_amount}}</p>
+        <h2>loan details</h2>
+        <p>{{i.loanid.loan_name}}</p>
+        <p>{{i.loanid.repayment}}Year</p>
+        <p>{{i.loanid.interest}}%</p>
+
+
+    </div>
+    <div class="col-3">
+        <img src="/static/assets/image/{{i.docmnt1}}"style="width:100%" alt="">
+    </div>
+    <div class="col-3">
+        <img src="/static/assets/image/{{i.docmnt2}}"style="width:100%" alt="">
+
+    </div>
+    <div class="col-3">
+        <img src="/static/assets/image/{{i.docmnt3}}"style="width:100%" alt="">
+
+    </div>
+
+</div>
+<br><br><br><br>
+<div class="row">
+    <div class="col-2">
+        <form method="post">
+            {% csrf_token %}
+            <input type="hidden"value="1" name="a1">
+            <input type="hidden"value="{{i.appid}}" name="a2">
+            <input type="submit"value="Approve"class="btn btn-outline-success">
+            
+        </form>
+    </div>
+    <div class="col-2">
+        <form method="post">
+            {% csrf_token %}
+            <input type="hidden"value="2" name="a1">
+            <input type="hidden"value="{{i.appid}}" name="a2">
+            <input type="submit"value="Reject"class="btn btn-outline-danger">
+            
+        </form>
+    </div>
+    <!-- <div class="col-4">
+        <form method="post">
+            {% csrf_token %}
+            <input type="hidden"value="3" name="a1">
+            <input type="hidden"value="{{i.appid}}" name="a2">
+            <input type="text" name="a3" >
+            <input type="submit"value="Approve"class="btn btn-outline-warning">
+            
+        </form>
+    </div> -->
+    </div>
+{% endfor %}
+
+
+
+
+{% endblock %}

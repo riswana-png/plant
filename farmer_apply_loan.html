@@ -1,0 +1,37 @@
+
+
+{% extends 'farmer/farmer_home.html' %}
+{% load static %} 
+{% block content %}
+{% if msg %}
+<script>
+    alert("{{msg}}")
+</script>
+{% endif %}
+
+
+<!-- register -->
+<div class="alert alert-secondary mt-5" >
+    <div class="container mt-5">
+        <div style="margin:0px 200px;">
+        <h3 class="mt-5" >Appy Loan</h3>
+        
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %} 
+                <input type="number" placeholder="Amount Needed" required=" " name="a2"class="form-control"><br>
+<hr>
+<h2>documents</h2>
+                <input type="file" placeholder="Aadhar..." required=" " name="a3"class="form-control"><br>
+                <input type="file" placeholder="Land Documents..." required=" " name="a4"class="form-control"><br>
+                <input type="file" placeholder="Land tax..." required=" " name="a5"class="form-control"><br>
+                
+                <input type="submit" value="Submit"class="btn btn-success mt-5 ">
+            </form>
+        </div>
+        </div>
+        
+        </div>
+    </div>
+</div>
+{% endblock %}
+<!-- //register -->

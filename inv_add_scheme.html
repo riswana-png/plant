@@ -1,0 +1,90 @@
+{% extends 'investor/inv_home.html' %}
+{% load static %} 
+{% block content %}
+{% if msg %}
+<script>
+    alert("{{msg}}")
+</script>
+{% endif %}
+
+
+
+<style>
+  .one{
+    background-color: rgba(0, 0, 0, 0);
+    color:white;
+
+  }
+</style>
+
+<section >
+<br><br><br><br>
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body bg-success p-5">
+              <h2 class="text-uppercase text-center mb-5" >Loan Plan</h2>
+
+              <form method="post" >
+                {% csrf_token %}
+
+                <div class="form-outline mb-4">
+                  <input type="text" id="form3Example1cg" class="form-control form-control-sm one"name="a1" />
+                  <label class="form-label" for="form3Example1cg">Loan Name</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="text" id="form3Example1cg" class="form-control form-control-sm one"name="a2"/>
+                  <label class="form-label" for="form3Example1cg">Type of Loan</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="text" id="form3Example1cg" class="form-control form-control-sm one"name="a3"/>
+                  <label class="form-label" for="form3Example1cg">Repayment</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <textarea id="form3Example1cg" class="form-control form-control-sm one"name="a4"></textarea>
+                  <label class="form-label" for="form3Example1cg">Documents</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="text" id="form3Example3cg" class="form-control form-control-sm one"name="a5" />
+                  <label class="form-label" for="form3Example3cg">Maximum Amount</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="text" id="form3Example4cg" class="form-control form-control-sm one"name="a6"/>
+                  <label class="form-label" for="form3Example4cg">Interest</label>
+                </div>
+
+                {% comment %} <div class="form-outline mb-4">
+                  <input type="password" id="form3Example4cdg" class="form-control form-control-sm one"name="a7"/>
+                  <label class="form-label" for="form3Example4cdg">Repeat Password</label>
+                </div> {% endcomment %}
+
+               
+
+                <div class="d-flex justify-content-center">
+                  <button type="submit"
+                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Add</button>
+                </div>
+
+                <!-- <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#!" -->
+                    <!-- class="fw-bold text-body"><u>Login here</u></a></p> -->
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+{% endblock %}

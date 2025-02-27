@@ -1,0 +1,53 @@
+{% extends 'farmer/farmer_home.html' %} {% load static %} {% block content %} 
+{% if msg %}
+
+<script>
+  alert("{{msg}}");
+</script>
+{% endif %}
+<style>
+  .one {
+    width: 50%;
+    background-color: blue;
+    color: whitesmoke;
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+  }
+</style>
+<!-- collections -->
+<div class="mt-5">
+    <div class="container">
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  
+
+
+      {% for i in abc%}
+      <!-- <h2>{{i.loanid.loan_name}}</h2> -->
+
+      {% if i.app1 == "Rejected" %}
+      <h2 class="text-danger">{{i.loanid.loan_name}}</h2>
+      <p>Loan application has been rejected</p>
+   {% endif %}
+      {% if i.app1 == "approved" %}
+      <h2 class="text-success">{{i.loanid.loan_name}}</h2>
+      <h4>{{i.loanid.invid.inv_name}}</h4>
+
+      <p>Loan application has been Approved Contact in office number as soon as possible</p>
+      <h5>{{i.loanid.invid.inv_phone}}</h5>
+   {% endif %}
+        
+      {% endfor %}
+    </div>
+
+   
+    <br /><br /><br /><br /><br />
+    <!-- //collections -->
+    {% endblock %}
+</div>
+  </div>
+</div>
